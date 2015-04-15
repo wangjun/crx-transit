@@ -1,9 +1,9 @@
 var PAT_ENGLISH = /^[a-z]+(\'|\'s)?$/i;
 var tpls = $.extend(tpls, {
-    NOTIFY_LIST: ''
-        + '<div id="transit-notify-list">'
-        + '  <div class="transit-list-inner"></div>'
-        + '</div>'
+    NOTIFY_LIST: '' +
+        '<div class="transit-notify-list">' +
+        '  <div class="transit-list-inner"></div>' +
+        '</div>'
 });
 
 function canTranslate(text) {
@@ -82,7 +82,7 @@ function autoFitNotifyList() {
 }
 
 function getNotifyList() {
-    var $notifyList = $('#transit-notify-list');
+    var $notifyList = $('.transit-notify-list');
     if ($notifyList.size() === 0) {
         log("Generating notification list at:", location.href);
         $notifyList = $(tpls.NOTIFY_LIST).appendTo('body');
@@ -100,7 +100,7 @@ function doNotify(text, position) {
 
     notify(text, function($notify) {
         log('Translating:', text);
-        var message = { type: 'translate', from: 'page', text: text }
+        var message = { type: 'translate', from: 'page', text: text };
         chrome.extension.sendMessage(message, function(response) {
             log(text, 'translated to', response.translation);
             $notify.notify(response.translation, options.notifyTimeout);
@@ -120,5 +120,5 @@ initOptions(function() {
         registerMessageDispatcher({ selection: selectionHandler });
     }
 
-    log('Initialized notify.user.js')   
+    log('Initialized notify.user.js');
 });

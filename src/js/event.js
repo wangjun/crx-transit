@@ -1,5 +1,5 @@
-var API_URL = 'http://fanyi.youdao.com/openapi.do?keyfrom=TransIt&key=597592531&type=data&doctype=json&version=1.1&q='
-var PUSH_URL = 'http://trit.herokuapp.com/api/items'
+var API_URL = 'http://fanyi.youdao.com/openapi.do?keyfrom=TransIt&key=597592531&type=data&doctype=json&version=1.1&q=';
+var PUSH_URL = 'http://trit.herokuapp.com/api/items';
 var currentText = '';
 var TRANSLATORS = {
     baidu: BaiduTranslator,
@@ -54,7 +54,7 @@ function translateHanlder(request, sender, sendResponse) {
 
             translation = fmt(TPLS.SUCCESS, title + translation); 
         } else {
-            log('WARNING: translation not found.')
+            log('WARNING: translation not found.');
         }
 
         sendResponse({ translation: translation });
@@ -76,8 +76,8 @@ registerMessageDispatcher({
 function clearCacheStuff(details) {
     if (details.reason == 'update') {
         localStorage.clear();
-        log('Cache cleaned up')
-    };
+        log('Cache cleaned up');
+    }
 }
 
 initOptions(function() {

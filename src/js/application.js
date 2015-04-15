@@ -43,7 +43,9 @@ function initOptions(callback) {
     chrome.storage.sync.get(null, function(data) {
         $.extend(options, data);
         chrome.storage.sync.set(options);
-        callback && callback();
+        if (jQuery.isFunction(callback)) {
+            callback();
+        }
     });
 }
 

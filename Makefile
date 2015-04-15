@@ -19,3 +19,6 @@ install:
 	@uglifyjs $(LIB)/angular/angular.js \
 	          $(LIB)/angular-elastic/elastic.js \
 	          -cmo $(SRC)/lib/angular-all.js 
+
+lint:
+	jshint $(shell find ./src/js -name '*.js')

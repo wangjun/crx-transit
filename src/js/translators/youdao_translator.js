@@ -1,7 +1,7 @@
-YoudaoTranslator = new function() {
+YoudaoTranslator = function() {
   this.name = 'youdao';
 
-  var API_URL = 'http://fanyi.youdao.com/openapi.do?keyfrom=TransIt&key=597592531&type=data&doctype=json&version=1.1&q='
+  var API_URL = 'http://fanyi.youdao.com/openapi.do?keyfrom=TransIt&key=597592531&type=data&doctype=json&version=1.1&q=';
 
   var format = function(result) {
     if (!result || result.errorCode) return null;
@@ -17,7 +17,7 @@ YoudaoTranslator = new function() {
     }
     if (result.web) {
       response.web = result.web.map(function(kv) {
-        return kv.key + ': ' + kv.value.join('；')
+        return kv.key + ': ' + kv.value.join('；');
       }).join('<br/>');
     }
 
@@ -46,5 +46,5 @@ YoudaoTranslator = new function() {
     } else {
       request(text, callback);
     }
-  }
+  };
 };

@@ -61,5 +61,5 @@ function toggleLinkInspectMode(evt) {
 initOptions(function(options) {
     $(document).on('keyup keydown', toggleLinkInspectMode);
     $(document).on('mouseup', transIt);
-    log('action.user.js initialized.')
+    log('action.user.js initialized.');
 });
