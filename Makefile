@@ -21,4 +21,7 @@ install:
 	          -cmo $(SRC)/lib/angular-all.js 
 
 lint:
-	jshint $(shell find ./src/js -name '*.js')
+	@echo 'Linting javascript files ...'
+	@jshint $(shell find ./src/js -name '*.js')
+	@echo 'Linting stylesheet files ...'
+	@csslint --quiet $(shell find ./src/css -name '*.css')
