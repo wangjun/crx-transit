@@ -10,18 +10,18 @@
   <div class="loading" ng-hide="isReady">加载中 ...</div>
 
   <div class="container" ng-show="isReady">
-    <textarea id="source" placeholder="输入文字进行翻译 ..."
+    <textarea class="source" placeholder="输入文字进行翻译 ..."
               ng-model="source"
               ng-trim="false"
               ng-keydown="handleKeydown($event)"
               ng-keyup="handleChange($event)"
               msd-elastic></textarea>
 
-    <div id="result" ng-bind-html="output | html_safe"></div>
+    <div class="result" ng-bind-html="output | html_safe"></div>
 
     <footer>
       <a href="#" class="btn-options pull-right" title="偏好设定"></a>
-      <a href="#" class="btn-translator pull-right {{options.translator}}" title="翻译服务提供商"></a>
+      <a href="#" class="btn-translator btn-translator-{{options.translator}} pull-right " title="翻译服务提供商"></a>
 
       <input type="checkbox" name="pageInspect" id="optionPageInspect" ng-model="options.pageInspect" />
       <label for="optionPageInspect" title="页面划词"></label>

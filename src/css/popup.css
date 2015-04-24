@@ -1,14 +1,13 @@
 body {
   width: 200px;
   margin: 0;
-  padding: 7px;
   font-size: 14px;
   line-height: 20px;
   color: #555;
 }
 
 .ng-hide {
-  display: block!important;
+  display: block;
   position: absolute;
   top: -9999px;
   left: -9999px;
@@ -22,25 +21,23 @@ label {
   display: block;
 }
 
-#source {
+.source {
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   border: 1px inset #e0e0e0;
   background-color: #fefbf5;
   resize: none;
   font-size: 14px;
   line-height: 20px;
   color: #555;
-  width: 100%;
-  height: 20px;
   max-height: 80px;
   margin: 0 0 2px 0;
   padding: 2px 4px;
   font-weight: bold;
-  box-sizing: border-box;
+}
 
-  &:active, &:focus {
-    outline: -webkit-focus-ring-color auto 3px;
-  }
+.source:active, .source:focus {
+  outline: -webkit-focus-ring-color auto 3px;
 }
 
 .btn-translator {
@@ -50,35 +47,32 @@ label {
   background-size: 50px 16px;
   background-repeat: no-repeat;
   background-position: right center;
-
-  &.youdao {
-    background-image: url(../img/translators/youdao.png);
-  }
-
-  &.baidu {
-    background-size: 50px 12px;
-    background-image: url(../img/translators/baidu.png);
-  }
 }
 
-#result {
+.btn-translator-youdao {
+  background-image: url(../img/translators/youdao.png);
+}
 
-  div {
-    max-height: 200px;
-    overflow: auto;
-    margin-bottom: 7px;
-    padding: 3px 6px;
-  }
+.btn-translator-baidu {
+  background-size: 50px 12px;
+  background-image: url(../img/translators/baidu.png);
+}
 
-  .success {
-    background: #efffef;
-    color: #2B3F29;
-  }
+.result div {
+  max-height: 200px;
+  overflow: auto;
+  margin-bottom: 7px;
+  padding: 3px 6px;
+}
 
-  .warning {
-    background: #FFF8DC;
-    color: #888888;
-  }
+.result .success {
+  background: #efffef;
+  color: #2B3F29;
+}
+
+.result .warning {
+  background: #FFF8DC;
+  color: #888888;
 }
 
 footer {
